@@ -1,0 +1,15 @@
+parameters:
+	level: 8
+	paths:
+		- src
+		- tests
+	excludePaths:
+		- tests/fixtures/*
+	ignoreErrors:
+		# Allow mixed return types in exception constructors
+		- '#Parameter \#4 \$context of method.*Exception.*__construct\(\) expects array, mixed given\.#'
+	scanDirectories:
+		- vendor
+	checkMissingIterableValueType: false
+	checkGenericClassInNonGenericObjectType: false
+	reportUnmatchedIgnoredErrors: false

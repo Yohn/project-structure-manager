@@ -1,0 +1,18 @@
+#!/usr/bin/env php
+<?php
+
+declare(strict_types=1);
+
+require_once __DIR__ . '/../vendor/autoload.php';
+
+use Yohns\ProjectStructure\Command\GenerateStructureCommand;
+use Yohns\ProjectStructure\Command\CreateFromStructureCommand;
+use Symfony\Component\Console\Application;
+
+$application = new Application('Project Structure Manager', '1.0.0');
+
+// Add commands
+$application->add(new GenerateStructureCommand());
+$application->add(new CreateFromStructureCommand());
+
+$application->run();
